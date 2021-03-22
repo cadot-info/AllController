@@ -3,6 +3,7 @@ Universal Controller for symfony 5
 
 
 ## Use
+0- in your Controller directory clone this github
 1- create yours entities (name with fisrt letter in capitalize)=>Word
 2- copy all directory in your template directory
 2- add your repository in header
