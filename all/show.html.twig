@@ -1,0 +1,26 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block body %}
+<h1> N° {{all.id}}</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+            {% for item in all|objetProperties %}
+            <th>item</th>
+            <td>{{attribute(all, item)}}</td>
+            {% endfor %}
+
+        </tr>
+
+    </tbody>
+</table>
+
+<a class="btn btn-primary" href="{{ path('all_index', {'part':part}) }}">Revenir à la liste</a>
+
+<a class="btn btn-outline-secondary" href="{{ path('all_edit', {'id': all.id,'part':part}) }}">Editer</a>
+
+
+
+{{ include('all/_delete_form.html.twig') }}
+{% endblock %}

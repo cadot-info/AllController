@@ -1,0 +1,11 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block body %}
+<h1>Edition N°{{all.id}}</h1>
+
+{{ include('all/_form.html.twig', {'button_label': 'Mise à jour'}) }}
+
+<a class="btn btn-primary" href="{{ path('all_index', {'part':part}) }}">Revenir à la liste</a>
+
+{{ include('all/_delete_form.html.twig') }}
+{% endblock %}

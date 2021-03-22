@@ -2,28 +2,12 @@
 
 namespace App\Controller;
 
-use App\Repository\ApiRepository;
-use App\Repository\ResultatsRepository;
-use App\Repository\WordRepository;
 use App\Repository\TransactionRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
-// $entities = [];
-// $DirEntities = scandir('../src/Entity');
-// foreach ($DirEntities as $entitie) {
-//     if ($entitie != '.' && $entitie != '..' && substr($entitie, 0, 1) != '.') {
-//         $realEntitie = substr($entitie, 0, - (strlen('.php')));
-//         if (!in_array($realEntitie, explode(',', $_ENV['CONTROLLER_NOT_UNIVERSAL']))) {
-//             $entities[] = $realEntitie;
-//             $cname = "App\\Entity\\" . $realEntitie;
-//             $$realEntitie = new $cname;
-//         }
-//     }
-// }
 
 /**
  * @Route("/all")

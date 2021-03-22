@@ -1,0 +1,44 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block body %}
+<h1>Liste des API</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            {% for item in alls|objetProperties %}
+            <th>{{item}}</th>
+            {% endfor %}
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in alls %}
+        <tr>
+            {% for item in alls|objetProperties %}
+            <td>
+                {% if attribute(row, item).timestamp is defined %}
+                {{attribute(row, item)|date('m/d/Y')}}
+                {% else %}
+                {{attribute(row, item)}}
+                {% endif %}
+            </td>
+            {% endfor %}
+
+            <td>
+                <a class="btn btn-outline-primary" href="{{ path('all_show', {'id': row.id,'part':part}) }}">Voir</a>
+                <a class="btn btn-outline-secondary"
+                    href="{{ path('all_edit', {'id': row.id,'part':part}) }}">Editer</a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="5">{{part}} vide</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a class="btn btn-outline-primary" href="{{ path('all_new',{'part':part}) }}">Ajouter</a>
+{% endblock %}

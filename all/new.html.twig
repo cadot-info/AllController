@@ -1,0 +1,11 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block body %}
+
+<div class="col-6 mx-auto">
+    <h1>Création</h1>
+    {{ include('all/_form.html.twig') }}
+    <a class="btn btn-primary" href="{{ path('all_index', {'part':part}) }}">Revenir à la liste</a>
+</div>
+
+{% endblock %}
