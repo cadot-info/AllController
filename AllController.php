@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-//use App\Repository\WordRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,11 +14,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  */
 class AllController extends AbstractController
 {
-    //protected $word;
 
-    public function __construct() //WordRepository $word)
+    public function __construct()
     {
-        //$this->word = $word;
+        //$this->...
 
     }
 
