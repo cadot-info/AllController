@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\TransactionRepository;
+//use App\Repository\WordRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,14 +15,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  */
 class AllController extends AbstractController
 {
-    protected $word, $api, $resultats;
+    //protected $word;
 
-    public function __construct(WordRepository $word, ApiRepository $api, TransactionRepository $transaction, ResultatsRepository $resultats)
+    public function __construct() //WordRepository $word)
     {
-        $this->word = $word;
-        $this->api = $api;
-        $this->transaction = $transaction;
-        $this->resultats = $resultats;
+        //$this->word = $word;
+
     }
 
     /**
