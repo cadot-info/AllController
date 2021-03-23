@@ -5,12 +5,12 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/all")
- * @IsGranted("ROLE_SUPER_ADMIN")
+ * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN')")
  */
 class AllController extends AbstractController
 {
@@ -21,7 +21,7 @@ class AllController extends AbstractController
 
     /**
      * @Route("/{part}", name="all_index", methods={"GET"})
-     * @IsGranted("ROLE_SUPER_ADMIN")
+     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN')")
      */
 
     public function index($part): Response
@@ -37,7 +37,7 @@ class AllController extends AbstractController
 
     /**
      * @Route("/new/{part}", name="all_new", methods={"GET","POST"})
-     * @IsGranted("ROLE_SUPER_ADMIN")
+     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN')")
      */
     public function new(Request $request, $part): Response
     {
@@ -63,7 +63,7 @@ class AllController extends AbstractController
 
     /**
      * @Route("/{id}/{part}", name="all_show", methods={"GET"}, requirements={"id"="\d+"})
-     * @IsGranted("ROLE_SUPER_ADMIN")
+     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN')")
      */
     public function show($id, $part): Response
     {
@@ -77,7 +77,7 @@ class AllController extends AbstractController
 
     /**
      * @Route("/edit/{id}/{part}", name="all_edit", methods={"GET","POST"}, requirements={"id"="\d+"})
-     * @IsGranted("ROLE_SUPER_ADMIN")
+     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN')")
      */
     public function edit(Request $request, $id, $part): Response
     {
@@ -100,7 +100,7 @@ class AllController extends AbstractController
 
     /**
      * @Route("/{id}", name="all_delete", methods={"DELETE"}, requirements={"id"="\d+"})
-     * @IsGranted("ROLE_SUPER_ADMIN")
+     * @Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN')")
      */
     public function delete(Request $request, $id): Response
     {
