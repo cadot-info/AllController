@@ -17,8 +17,6 @@ class AllController extends AbstractController
 
     public function __construct()
     {
-        //$this->...
-
     }
 
     /**
