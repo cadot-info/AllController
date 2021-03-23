@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partie Administration{% endblock %}
+
+{% block menu %}
+<li class="nav-item">
+    {% if app.user.roles[0]=='ROLE_SUPER_ADMIN' %}
+    <a class="nav-link" href="{{path('user_index')}}">Gestion des accès</a> {% endif %}
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{path('all_index',{'part':'word'})}}">Gestion de mes mots-clefs</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{path('all_index',{'part':'api'})}}">Gestion de mes API</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{path('all_index',{'part':'resultats'})}}">Resultats</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{path('all_index',{'part':'transaction'})}}">transactions</a>
+</li>
+<li class="nav-item ml-auto">
+    <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a>
+</li>
+
+{% endblock %}
+{% block body %}
+
+<div class="col-8">
+    {{ render_chart(chart) }}
+</div>
+{% endblock %}
